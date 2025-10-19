@@ -149,7 +149,7 @@ const indicatorStyle = computed(() => {
   position: absolute;
   top: calc(50% - 22px);
   height: 44px;
-  background-image: url('/bgturuncu.png');
+  background-image: url('bgturuncu.webp');
   background-size: cover;
   background-position: center;
   border-radius: 6px;
