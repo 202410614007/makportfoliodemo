@@ -71,8 +71,23 @@ const projects = [
 
 html, body {
   width: 100%;
+  height: 100%;
   font-family: 'Poppins', sans-serif;
   background-color: #242424;
+}
+
+.page-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.main-content {
+  display: flex;
+  flex: 1;
+  width: 100%;
+  height: 100%;
 }
 
 .left-side {
@@ -84,6 +99,12 @@ html, body {
   background-size: cover;
   background-position: center;
   padding: 2rem;
+}
+
+.left-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .right-side {
