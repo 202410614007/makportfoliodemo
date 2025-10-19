@@ -7,9 +7,51 @@
     <link rel="icon" type="image/png" href="/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Muhammed Ali</title>
+    <style>
+      /* Sayfa yüklenirken gösterilecek stil */
+      #app {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #242424;
+      }
+      
+      /* Loading ekranı (Vue yüklenince otomatik silinir) */
+      .app-loading {
+        text-align: center;
+        color: #ffcc00;
+        font-family: 'Poppins', sans-serif;
+      }
+      
+      .app-loading h2 {
+        font-size: 1.5rem;
+        margin: 0;
+      }
+      
+      .spinner {
+        border: 4px solid rgba(255, 204, 0, 0.1);
+        border-top: 4px solid #ffcc00;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        animation: spin 1s linear infinite;
+        margin: 20px auto;
+      }
+      
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+    </style>
   </head>
   <body>
-    <div id="app"></div>
+    <div id="app">
+      <div class="app-loading">
+        <div class="spinner"></div>
+        <h2>Yükleniyor...</h2>
+      </div>
+    </div>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
