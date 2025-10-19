@@ -25,4 +25,4 @@ npm run build
 ```
 
 ## 📝 Notlar
-Detaylar için ana portfolyo sitemi ziyaret edebilirsiniz: [https://202410614007.github.io/mak](https://202410614007.github.io/mak)
+Detaylar için ana portfolyo sitemi ziyaret edebilirsiniz: [https://makilicaslan.com/#home](https://makilicaslan.com/#home)
