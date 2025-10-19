@@ -81,8 +81,8 @@ watchEffect(() => {
     blog.value = {
       ...selected,
       image: isDarkMode.value
-        ? `${selected.imageBase}-dark.webp`
-        : `${selected.imageBase}.webp`
+        ? import.meta.env.BASE_URL + selected.imageBase.replace('/', '') + '-dark.webp'
+        : import.meta.env.BASE_URL + selected.imageBase.replace('/', '') + '.webp'
     }
   }
 })

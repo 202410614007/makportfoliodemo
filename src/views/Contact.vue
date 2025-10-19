@@ -69,7 +69,9 @@ onMounted(() => {
 
 // Resmi temaya göre seç
 const contactImage = computed(() =>
-  isDarkMode.value ? '/iletisim-dark.webp' : '/iletisim.webp'
+  isDarkMode.value
+    ? import.meta.env.BASE_URL + 'iletisim-dark.webp'
+    : import.meta.env.BASE_URL + 'iletisim.webp'
 )
 
 const sendEmail = () => {

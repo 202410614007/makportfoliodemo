@@ -3,7 +3,7 @@
     <main class="main-content">
       <section class="left-side">
         <div class="left-content">
-          <img src="/profile2.webp" alt="Profil Fotoğrafı" class="profile-photo-shadowed" />
+          <img :src="import.meta.env.BASE_URL + 'profile2.webp'" alt="Profil Fotoğrafı" class="profile-photo-shadowed" />
         </div>
       </section>
 
@@ -30,19 +30,19 @@
 
           <div class="social-wrapper">
             <a href="https://github.com/" target="_blank" class="social-icon">
-              <img src="/github.webp" alt="GitHub" class="icon-img" />
+              <img :src="import.meta.env.BASE_URL + 'github.webp'" alt="GitHub" class="icon-img" />
             </a>
             <a href="https://linkedin.com/" target="_blank" class="social-icon">
-              <img src="/linkedin.webp" alt="LinkedIn" class="icon-img" />
+              <img :src="import.meta.env.BASE_URL + 'linkedin.webp'" alt="LinkedIn" class="icon-img" />
             </a>
             <a href="mailto:klaslan1016@gmail.com" class="social-icon">
-              <img src="/eposta.webp" alt="E-posta" class="icon-img" />
+              <img :src="import.meta.env.BASE_URL + 'eposta.webp'" alt="E-posta" class="icon-img" />
             </a>
             <a href="https://instagram.com/creedistaken" target="_blank" class="social-icon">
-              <img src="/instagram.webp" alt="Instagram" class="icon-img" />
+              <img :src="import.meta.env.BASE_URL + 'instagram.webp'" alt="Instagram" class="icon-img" />
             </a>
             <a href="https://twitter.com/" target="_blank" class="social-icon">
-              <img src="/twitter.webp" alt="Twitter" class="icon-img" />
+              <img :src="import.meta.env.BASE_URL + 'twitter.webp'" alt="Twitter" class="icon-img" />
             </a>
           </div>
         </div>

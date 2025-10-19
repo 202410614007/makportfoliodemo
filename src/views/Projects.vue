@@ -63,12 +63,12 @@ const projects = computed(() => [
     id: '1',
     title: 'Kişisel Web Sitesi Projesi',
     description: 'Vue.js ve Vite Tabanlı Portfolyo Uygulaması',
-    image: isDarkMode.value ? '/siteproje-dark.webp' : '/siteproje.webp'
+  image: isDarkMode.value ? import.meta.env.BASE_URL + 'siteproje-dark.webp' : import.meta.env.BASE_URL + 'siteproje.webp'
   },
   {
     title: 'Yakında...',
     description: 'Yeni projeler üzerinde çalışıyorum, yakında burada paylaşacağım.',
-    image: isDarkMode.value ? '/dahafazlasıyakında-dark.webp' : '/dahafazlasıyakında.webp',
+  image: isDarkMode.value ? import.meta.env.BASE_URL + 'dahafazlasıyakında-dark.webp' : import.meta.env.BASE_URL + 'dahafazlasıyakında.webp',
     upcoming: true
   }
 ])

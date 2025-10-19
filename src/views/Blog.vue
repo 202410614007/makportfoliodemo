@@ -81,8 +81,8 @@ watchEffect(() => {
   posts.value = rawPosts.map((p) => ({
     ...p,
     image: isDarkMode.value
-      ? `${p.imageBase}-dark.webp`
-      : `${p.imageBase}.webp`
+      ? import.meta.env.BASE_URL + p.imageBase.replace('/', '') + '-dark.webp'
+      : import.meta.env.BASE_URL + p.imageBase.replace('/', '') + '.webp'
   }))
 })
 

@@ -35,12 +35,13 @@ onMounted(() => {
 
 // Resim ismini dark moda göre ayarla
 const getImage = (src) => {
-  if (src === '/profile2.webp') return src
+  let base = import.meta.env.BASE_URL
+  if (src === '/profile2.webp') return base + 'profile2.webp'
   if (isDarkMode.value) {
     const parts = src.split('.')
-    return `${parts[0]}-dark.${parts[1]}`
+    return base + `${parts[0].replace('/', '')}-dark.${parts[1]}`
   }
-  return src
+  return base + src.replace('/', '')
 }
 
 const sections = [
