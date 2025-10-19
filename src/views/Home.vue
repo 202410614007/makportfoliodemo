@@ -80,7 +80,7 @@ html, body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url('bg-blur.webp');
+  background-image: url(/bg-blur.webp);
   background-size: cover;
   background-position: center;
   padding: 2rem;
@@ -135,7 +135,7 @@ html, body {
 
 .project-btn {
   --bg-position-y: 0px;
-  background-image: url('bgturuncu.webp');
+  background-image: url(/bgturuncu.webp);
   background-size: 100% 280px;
   background-position: center var(--bg-position-y);
   background-repeat: no-repeat;
@@ -254,7 +254,7 @@ html, body {
 }
 
 .gradient-text {
-  background-image: url('bgturuncu.webp');
+  background-image: url(/bgturuncu.webp);
   background-size: cover;
   background-position: center;
   -webkit-background-clip: text;
