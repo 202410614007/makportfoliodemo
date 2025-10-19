@@ -1,12 +1,12 @@
+
 <template>
   <div class="page-container">
     <main class="main-content">
       <section class="left-side">
         <div class="left-content">
-          <img :src="import.meta.env.BASE_URL + 'profile2.webp'" alt="Profil Fotoğrafı" class="profile-photo-shadowed" />
+          <img :src="base + 'profile2.webp'" alt="Profil Fotoğrafı" class="profile-photo-shadowed" />
         </div>
       </section>
-
       <section class="right-side">
         <div class="center-section">
           <div class="about-wrapper">
@@ -15,7 +15,6 @@
               Bilgisayar Programcılığı öğrencisiyim ve projelerimi bu sayfada sergiliyorum.
             </p>
           </div>
-
           <div class="buttons-wrapper">
             <router-link
               v-for="(item, index) in projects"
@@ -27,27 +26,24 @@
               {{ item.title }}
             </router-link>
           </div>
-
           <div class="social-wrapper">
             <a href="https://github.com/" target="_blank" class="social-icon">
-              <img :src="import.meta.env.BASE_URL + 'github.webp'" alt="GitHub" class="icon-img" />
+              <img :src="base + 'github.webp'" alt="GitHub" class="icon-img" />
             </a>
             <a href="https://linkedin.com/" target="_blank" class="social-icon">
-              <img :src="import.meta.env.BASE_URL + 'linkedin.webp'" alt="LinkedIn" class="icon-img" />
+              <img :src="base + 'linkedin.webp'" alt="LinkedIn" class="icon-img" />
             </a>
             <a href="mailto:klaslan1016@gmail.com" class="social-icon">
-              <img :src="import.meta.env.BASE_URL + 'eposta.webp'" alt="E-posta" class="icon-img" />
+              <img :src="base + 'eposta.webp'" alt="E-posta" class="icon-img" />
             </a>
             <a href="https://instagram.com/creedistaken" target="_blank" class="social-icon">
-              <img :src="import.meta.env.BASE_URL + 'instagram.webp'" alt="Instagram" class="icon-img" />
+              <img :src="base + 'instagram.webp'" alt="Instagram" class="icon-img" />
             </a>
             <a href="https://twitter.com/" target="_blank" class="social-icon">
-              <img :src="import.meta.env.BASE_URL + 'twitter.webp'" alt="Twitter" class="icon-img" />
+              <img :src="base + 'twitter.webp'" alt="Twitter" class="icon-img" />
             </a>
           </div>
         </div>
-
-        <!-- 📍 Copyright sağ bloğun en altına bağımsız konumlandırıldı -->
         <div class="copyright">
           © 2025 Muhammed Ali Kılıçaslan. Tüm hakları saklıdır.
         </div>
@@ -57,6 +53,7 @@
 </template>
 
 <script setup>
+const base = import.meta.env.BASE_URL
 const projects = [
   { id: 2, title: 'Hakkımda', path: '/about' },
   { id: 3, title: 'Projelerim', path: '/projects' },
@@ -74,23 +71,8 @@ const projects = [
 
 html, body {
   width: 100%;
-  min-height: 100vh;
   font-family: 'Poppins', sans-serif;
   background-color: #242424;
-  overflow-x: hidden;
-}
-
-.page-container {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
-.main-content {
-  display: flex;
-  flex: 1;
-  width: 100%;
-  height: 100%;
 }
 
 .left-side {
