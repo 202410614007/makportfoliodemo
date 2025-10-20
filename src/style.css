@@ -25,8 +25,8 @@ a:hover {
 html, body {
   margin: 0;
   padding: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  min-height: 100vh;
   overflow-x: hidden;
   font-family: 'Poppins', sans-serif;
   background-color: #242424;
@@ -36,9 +36,14 @@ html, body {
 /* App kapsayıcı */
 #app {
   width: 100%;
-  height: 100%;
+  min-height: 100vh;
   margin: 0;
   padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  background-color: transparent;
 }
 
 /* Tüm öğelerde box-sizing düzeltmesi */

@@ -98,9 +98,9 @@ watchEffect(() => {
 }
 
 .breadcrumb-wrapper {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto 1rem auto;
-  padding: 0 1rem;
+  padding: 0 1.5rem;
 }
 
 .breadcrumb {
@@ -130,9 +130,9 @@ watchEffect(() => {
 /* Sayfa ana yapısı */
 .blog-container {
   display: flex;
-  justify-content: center;
-  gap: 2rem;
-  max-width: 1200px;
+  justify-content: space-between;
+  gap: 3rem;
+  max-width: 1400px;
   margin: 0 auto;
   flex-wrap: wrap;
   align-items: flex-start;
@@ -143,7 +143,7 @@ watchEffect(() => {
   flex-direction: column;
   gap: 1.5rem;
   width: 100%;
-  max-width: 400px;
+  max-width: 450px;
   flex: 1;
 }
 
@@ -165,8 +165,7 @@ watchEffect(() => {
 
 .right-side {
   flex: 2;
-  min-width: 300px;
-  max-width: 700px;
+  max-width: 800px;
   margin-top: 1.5rem;
 }
 

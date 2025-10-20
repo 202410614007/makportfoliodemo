@@ -122,7 +122,7 @@ const goToPost = (id) => {
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  max-width: 1000px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 

@@ -6,35 +6,37 @@
     </section>
 
     <div class="contact-wrapper">
-      <!-- Sol kısım -->
-      <div class="left-side">
-        <img :src="contactImage" alt="Profil Fotoğrafı" class="iletisim-img" />
+      <div class="left-column">
+        <div class="media-card">
+          <img :src="contactImage" alt="Profil Fotoğrafı" class="iletisim-img" />
+        </div>
 
         <div class="info-box">
           <h2>İletişim Bilgileri</h2>
           <p><strong>📧 E-posta:</strong><br />@mail.com</p>
-          <p><strong>🎓 Öğrenci E-posta:</strong><br />202410614007@baun.edu.tr</p>
+          <p><strong>🎓 Öğrenci E-posta:</strong><br>202410614007@ogr.balikesir.edu.tr<br />202410614007@baun.edu.tr</p>
           <p><strong>📱 Telefon:</strong><br />050. ... .. ..</p>
         </div>
       </div>
 
-      <!-- Sağ kısım -->
       <form ref="form" @submit.prevent="sendEmail" class="form-box">
-        <div class="form-group">
-          <label for="name">Ad Soyad</label>
-          <input type="text" id="name" v-model="formData.name" required />
-        </div>
-        <div class="form-group">
-          <label for="email">E-posta</label>
-          <input type="email" id="email" v-model="formData.email" required />
-        </div>
-        <div class="form-group">
-          <label for="subject">Konu</label>
-          <input type="text" id="subject" v-model="formData.subject" required />
-        </div>
-        <div class="form-group">
-          <label for="message">Mesaj</label>
-          <textarea id="message" v-model="formData.message" rows="5" required placeholder="Mesajınızı yazınız..."></textarea>
+        <div class="form-content">
+          <div class="form-group">
+            <label for="name">Ad Soyad</label>
+            <input type="text" id="name" v-model="formData.name" required />
+          </div>
+          <div class="form-group">
+            <label for="email">E-posta</label>
+            <input type="email" id="email" v-model="formData.email" required />
+          </div>
+          <div class="form-group">
+            <label for="subject">Konu</label>
+            <input type="text" id="subject" v-model="formData.subject" required />
+          </div>
+          <div class="form-group">
+            <label for="message">Mesaj</label>
+            <textarea id="message" v-model="formData.message" rows="5" required placeholder="Mesajınızı yazınız..."></textarea>
+          </div>
         </div>
         <button type="submit" class="send-btn">Gönder</button>
       </form>
@@ -125,52 +127,82 @@ const sendEmail = () => {
   border-radius: 2px;
 }
 
+
+
 .contact-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
+  --left-card: clamp(260px, 28vw, 340px);
+  --right-card: clamp(340px, 38vw, 460px);
+  display: grid;
+  grid-template-columns: var(--left-card) var(--right-card);
   gap: 2rem;
-  max-width: 1200px;
+  justify-content: center;
+  align-items: start;
+  width: 100%;
+  max-width: calc(var(--left-card) + var(--right-card) + 2rem);
   margin: 0 auto;
-  flex-wrap: wrap;
   padding-bottom: 3rem;
 }
 
-.left-side {
+.left-column {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
-  max-width: 400px;
-  flex: 1;
+  gap: 1.75rem;
+  align-self: stretch;
+}
+
+.left-column > * {
+  width: 100%;
+  max-width: var(--left-card);
+}
+
+.media-card,
+.info-box,
+.form-box {
+  border-radius: 16px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+  background-color: #fdfdfd;
+  aspect-ratio: 1 / 1;
+  width: 100%;
+}
+
+.media-card {
+  position: relative;
+  overflow: hidden;
 }
 
 .iletisim-img {
+  position: absolute;
+  inset: 0;
   width: 100%;
-  border-radius: 12px;
+  height: 100%;
   object-fit: cover;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
-  transition: box-shadow 0.3s ease, border 0.3s ease;
+  transition: transform 0.3s ease;
+}
+
+.media-card:hover .iletisim-img {
+  transform: scale(1.04);
 }
 
 .info-box {
-  background-color: #ffffff;
-  padding: 2.5rem;
-  border-radius: 16px;
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
-  transition: background-color 0.3s ease, color 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 1.75rem;
 }
+
 
 .info-box h2 {
   color: #000;
-  margin-bottom: 1rem;
-  font-size: 1.2rem;
+  font-size: 1.15rem;
+  margin: 0;
 }
 
 .info-box p {
-  margin-top: 1rem;
-  font-size: 0.95rem;
+  margin: 0;
+  font-size: 0.92rem;
   color: #444;
-  line-height: 1.5;
+  line-height: 1.45;
 }
 
 .info-box strong {
@@ -178,26 +210,46 @@ const sendEmail = () => {
   font-weight: 600;
 }
 
+
 .form-box {
-  background-color: #ffffff;
-  padding: 3rem;
-  border-radius: 16px;
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
-  width: 100%;
-  flex: 1;
-  min-width: 700px;
-  max-width: 500px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 750px;
+  gap: 1.25rem;
+  padding: 2rem;
   transition: background-color 0.3s ease, color 0.3s ease;
+  overflow: hidden;
+  align-self: stretch;
+  max-width: var(--right-card);
+  aspect-ratio: 1 / 1;
+}
+
+.form-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+}
+
+.form-content {
+  scrollbar-width: thin;
+}
+
+.form-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.form-content::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.25);
+  border-radius: 3px;
 }
 
 .form-group {
   display: flex;
   flex-direction: column;
-  margin-bottom: 1.5rem;
+  margin: 0;
 }
 
 label {
@@ -209,14 +261,24 @@ label {
 input,
 textarea {
   padding: 0.75rem;
-  border-radius: 8px;
+  border-radius: 10px;
   border: 1px solid #ccc;
   font-size: 1rem;
+  background-color: #fff;
+  color: #222;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: #ffcc00;
+  box-shadow: 0 0 0 3px rgba(255, 204, 0, 0.25);
 }
 
 textarea {
+  min-height: 120px;
   resize: vertical;
-  max-height: 150px;
 }
 
 textarea::placeholder {
@@ -244,8 +306,9 @@ textarea::placeholder {
   color: #f0f0f0;
 }
 
-.dark .form-box,
-.dark .info-box {
+.dark .media-card,
+.dark .info-box,
+.dark .form-box {
   background-color: #1e1e1e;
   color: #f0f0f0;
   box-shadow: 0 0 0 1px #333, 0 8px 24px rgba(255, 255, 255, 0.05);
@@ -268,40 +331,40 @@ textarea::placeholder {
 }
 
 /* Responsive */
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
   .contact-wrapper {
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem;
-    padding: 1rem;
+    --left-card: clamp(240px, 33vw, 300px);
+    --right-card: clamp(320px, 45vw, 420px);
+  }
+}
+
+@media (max-width: 820px) {
+  .contact-wrapper {
+    grid-template-columns: minmax(260px, 1fr);
+    grid-auto-rows: auto;
+    max-width: 480px;
+    gap: 1.75rem;
+    padding: 0 1rem 2.5rem;
   }
 
-  .left-side,
+  .media-card,
+  .info-box,
   .form-box {
-    width: 100%;
-    max-width: 100%;
-    padding: 0;
-  }
-
-  .form-box {
-    min-width: auto;
     height: auto;
+    aspect-ratio: auto;
+    max-width: none;
+  }
+
+  .left-column > * {
+    max-width: none;
   }
 
   .form-box {
-    padding: 1.5rem;
-    min-width: auto;
-    height: auto;
-    box-sizing: border-box;
+    padding: 1.75rem;
   }
 
-  .iletisim-img {
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  }
-
-  .form-group label {
-    font-size: 0.95rem;
+  .info-box {
+    padding: 1.75rem;
   }
 
   input,
@@ -310,8 +373,7 @@ textarea::placeholder {
   }
 
   .send-btn {
-    padding: 0.8rem;
-    font-size: 1rem;
+    padding: 0.85rem 1.8rem;
   }
 }
 

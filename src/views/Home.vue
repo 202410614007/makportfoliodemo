@@ -124,10 +124,10 @@ html, body {
   justify-content: center;
   align-items: center;
   height: 100%;
-  max-width: 400px;
+  max-width: 500px;
   width: 100%;
   gap: 1.5rem;
-  padding: 2rem 0;
+  padding: 2rem;
 }
 
 .about-wrapper {

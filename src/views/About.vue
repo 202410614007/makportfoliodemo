@@ -148,7 +148,7 @@ onMounted(() => {
 
 .image-box {
   flex: 1;
-  max-width: 400px;
+  max-width: 450px;
 }
 
 .image-box img {
@@ -160,7 +160,7 @@ onMounted(() => {
 
 .text-box {
   flex: 1;
-  max-width: 600px;
+  max-width: 650px;
 }
 
 .text-box h2 {
